@@ -1,0 +1,55 @@
+GET http://localhost:3002/api/persons
+
+###
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+        "name": "Bruno Alzaga",
+        "number": "650454655"
+}
+
+###
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+        "named": "Bruno Alzaga",
+        "number": "650454655"
+}
+
+###
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+        "name": "Bruno Alzaga",
+        "numero": "650454655"
+}
+
+###
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+        "name": "Bruno Alzaga",
+        "number": "650454655"
+}
+
+###
+
+POST http://localhost:3002/api/persons
+Content-Type: application/json
+
+{
+        "name": "Margarita Barrios Vallecillo",
+        "number": "600115599"
+}
+
+###
+
+DeLETE http://localhost:3002/api/persons/5
