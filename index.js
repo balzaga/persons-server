@@ -22,7 +22,7 @@ app.use(requestLogger)
 
 morgan.token('body', req => {
     return JSON.stringify(req.body)
-  })
+})
 
 app.use(morgan('method: :method url: :url status: :status content-length: :res[content-length] date: :date[web] - response-time: :response-time ms :body'))
 
@@ -49,9 +49,7 @@ let persons = [
     }
 ]
 
-app.get('/', (request, response) => {
-    response.send('<h1>Hello World!</h1>')
-})
+//app.get('/', (request, response) => {response.send('<h1>Hello World!</h1>')})
 
 app.get('/info', (request, response) => {
     let out = `Phonebook has info for ${persons.length} people<br />\n<br />\n`;
@@ -92,7 +90,6 @@ const generateId = () => {
     return maxId + 1
 }
 
-
 app.post('/api/persons', (request, response) => {
     const { body } = request
     if (!body) {
@@ -129,11 +126,8 @@ app.post('/api/persons', (request, response) => {
     response.json(person)
 })
 
-const unknownEndpoint = (request, response) => {
-    response.status(404).send({ error: 'unknown endpoint' })
-}
-
-app.use(unknownEndpoint)
+//const unknownEndpoint = (request, response) => {response.status(404).send({ error: 'unknown endpoint' })}
+//app.use(unknownEndpoint)
 
 const PORT = process.env.PORT || 3002
 app.listen(PORT, () => {
